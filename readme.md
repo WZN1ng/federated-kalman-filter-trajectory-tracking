@@ -23,9 +23,10 @@
 ​	针对该数据集，各局部节点均采用卡尔曼滤波方法来实现对车辆轨迹的追踪和预测。由于需要模拟多传感器的情况，所以将数据集中的相关数据假定为真实状态信息，在读取数据时每个传感器都在此基础上附加一个白噪声作为各自的观测信息。为每个局部滤波器设置了不同的随机数种子，以此确保各局部滤波器添加的观测噪声是无关的。
 
 ​	设实验对象的状态转移方程和观测方程分别为：
-$
+
+$$
 X_k=FX_{k-1}+W_{k-1}\tag{1}
-$
+$$
 
 $$
 Y_k=HX_k+V_k\tag{2}
@@ -90,11 +91,11 @@ $$
 
 经过联合卡尔曼滤波器处理，其轨迹跟踪及预测效果分别如下图所示：
 
-<img src="/DSP/res/Trajectory of Car 75.png" alt="img" style="zoom:40%;" /><img src="H:/学习/研一上/现代数字信号处理/大作业_吴震宁/DSP/res/Trajectory of Car 137.png" alt="img" style="zoom:40%;" />
+<img src="/DSP/res/Trajectory of Car 75.png" alt="img" style="zoom:40%;" /><img src="/DSP/res/Trajectory of Car 137.png" alt="img" style="zoom:40%;" />
 
-<img src="/DSP/res/Trajectory of Car 1170.png" alt="img" style="zoom:40%;" /><img src="H:/学习/研一上/现代数字信号处理/大作业_吴震宁/DSP/res/Trajectory of Car 1210.png" alt="img" style="zoom:40%;" />
+<img src="/DSP/res/Trajectory of Car 1170.png" alt="img" style="zoom:40%;" /><img src="/DSP/res/Trajectory of Car 1210.png" alt="img" style="zoom:40%;" />
 
-<img src="/DSP/res/Trajectory of Car 1325.png" alt="img" style="zoom:40%;" /><img src="H:/学习/研一上/现代数字信号处理/大作业_吴震宁/DSP/res/Trajectory of Car 2435.png" alt="img" style="zoom:40%;" />
+<img src="/DSP/res/Trajectory of Car 1325.png" alt="img" style="zoom:40%;" /><img src="/DSP/res/Trajectory of Car 2435.png" alt="img" style="zoom:40%;" />
 
 <img src="/DSP/res/Trajectory of Car 2484.png" alt="img" style="zoom:40%;" />
 
@@ -112,10 +113,10 @@ $$
 
 ​	其他车辆数据集轨迹追踪的误差随更新间隔的变化如下所示：
 
-<img src="/DSP/res/Error of Different Intervals (Car 75).png" alt="img" style="zoom:40%;" /><img src="H:/学习/研一上/现代数字信号处理/大作业_吴震宁/DSP/res/Error of Different Intervals (Car 1170).png" alt="img" style="zoom:40%;" />
+<img src="/DSP/res/Error of Different Intervals (Car 75).png" alt="img" style="zoom:40%;" /><img src="/DSP/res/Error of Different Intervals (Car 1170).png" alt="img" style="zoom:40%;" />
 
-<img src="/DSP/res/Error of Different Intervals (Car 1210).png" alt="img" style="zoom:40%;" /><img src="H:/学习/研一上/现代数字信号处理/大作业_吴震宁/DSP/res/Error of Different Intervals (Car 1325).png" alt="img" style="zoom:40%;" />
+<img src="/DSP/res/Error of Different Intervals (Car 1210).png" alt="img" style="zoom:40%;" /><img src="/DSP/res/Error of Different Intervals (Car 1325).png" alt="img" style="zoom:40%;" />
 
-<img src="/DSP/res/Error of Different Intervals (Car 2435).png" alt="img" style="zoom:40%;" /><img src="H:/学习/研一上/现代数字信号处理/大作业_吴震宁/DSP/res/Error of Different Intervals (Car 2484).png" alt="img" style="zoom:40%;" />
+<img src="/DSP/res/Error of Different Intervals (Car 2435).png" alt="img" style="zoom:40%;" /><img src="/DSP/res/Error of Different Intervals (Car 2484).png" alt="img" style="zoom:40%;" />
 
 ​	对比轨迹图可以发现，车辆运动轨迹越复杂，转向越多，大更新间隔带来的精度损失就越明显。因此，在实际应用中，选取合适的更新间隔才能达成精度与效率之间的平衡。
